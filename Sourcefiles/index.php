@@ -15,7 +15,7 @@
                 // if statement to break and arrange the boxes
                 if($id === 4 or $id === 7) print "<br>";
                 // the box containing the input  
-                print "<input name ='$id' type ='text' size ='8'>";
+                print "<input name ='$id' type ='text' size ='8'";
                 // value checking from inputs and printing out a value in a case it's not empty
                 if(isset($_POST['submit']) and !empty($_POST[$id])){
                     // checking if the value is X or O
@@ -66,10 +66,14 @@
                     }
                     else{
                        $error = true; 
-                    };
-                };
+                    }
+                }
+                else {
+                    print ">";
+                }
               };
             ?>
+            <p><input type="submit" name="submit"/></p>
             </form>
            
             
