@@ -23,7 +23,7 @@
                         // later insertion of count variable and a counter
                         $count += 1;
                     //  keep the value inside the box
-                      print "value='$_POST[$id]'>";  
+                      print "value='$_POST[$id]' readonly>";  
                     //   associating the fields with the user input. working with data and teaching the programm the winning conditions by using forloops
                         // horizontal loop
                         for($a = 1, $b = 2, $c = 3; $a <=7, $b <= 8, $c <= 9; $a+=3, $b+=3, $c+=3){
@@ -52,7 +52,7 @@
                                 }
                             }
                         }
-                        for($a = 1, $b = 5, $c = 9; $a <= 3, $b <= 5, $c <= 9; $a+=2, $b+=5, $c-=2){
+                        for($a = 1, $b = 5, $c = 9; $a <= 3, $b <= 5, $c >= 7; $a+=2, $b+=0, $c-=2){
                             // if statement to check if a winning condition is on the cross line
                             if($_POST[$a] == $_POST[$b] and $_POST[$b] == $_POST[$c]){
                                 // determining the winner and printing out the winning message
@@ -64,7 +64,7 @@
                                     $o_wins = true;
                                 }
                             }
-                        }
+                        } 
                     }
                     else{
                        $error = true; 
@@ -86,10 +86,12 @@
                print "Player X wins";
            } elseif($count == 9 and !$o_wins and !$x_wins){
                print "Draw";
+           } else {
+               print "Please enter X and O values";
            }
            
            ?>
-            
+           <a href="https://php-manywounds.c9users.io/IntroToPhp/tic/Sourcefiles/index.php">Try again</a>
         </body>
         
         
