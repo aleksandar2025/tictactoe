@@ -9,7 +9,7 @@
             <form method="POST" action="index.php">
              <?php 
             //  adding error default variable
-            $error = false;
+            $error = false; $x_wins = false; $o_wins = false; $count = 0;
                 //   forloop to create more boxes
               for ($id = 1; $id <= 9; $id++){      
                 // if statement to break and arrange the boxes
@@ -20,6 +20,8 @@
                 if(isset($_POST['submit']) and !empty($_POST[$id])){
                     // checking if the value is X or O
                     if($_POST[$id] == "x" or  $_POST[$id] == "o"){
+                        // later insertion of count variable and a counter
+                        $count += 1;
                     //  keep the value inside the box
                       print "value='$_POST[$id]'>";  
                     //   associating the fields with the user input. working with data and teaching the programm the winning conditions by using forloops
@@ -76,6 +78,17 @@
             <p><input type="submit" name="submit"/></p>
             </form>
            
+           <!--adding feedback-->
+           <?php
+           if($o_wins){
+               print "Player O wins";
+           } elseif($x_wins) {
+               print "Player X wins";
+           } elseif($count == 9 and !$o_wins and !$x_wins){
+               print "Draw";
+           }
+           
+           ?>
             
         </body>
         
