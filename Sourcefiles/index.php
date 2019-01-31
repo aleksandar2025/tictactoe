@@ -13,7 +13,7 @@
                 //   forloop to create more boxes
               for ($id = 1; $id <= 9; $id++){      
                 // if statement to break and arrange the boxes
-                if($id === 4 or $id === 7) print "<br>";
+                if($id === 4 || $id === 7) print "<br>";
                 // the box containing the input  
                 print "<input name ='$id' type ='text' size ='8'";
                 // value checking from inputs and printing out a value in a case it's not empty
